@@ -25,9 +25,12 @@
     <p>Bem-vindo à minha primeira página HTML!</p>
 
     <script>
-        var nome = window.prompt('Qual o seu nome? ') // vai perguntar o nome
-        window.alert('Seja bem-vindo, ' + nome) // o + serve para concatenação, e o alert exibe uma mensagem na tela.
-
+        var num1 = Number.parseInt(window.prompt('Digite um número: ')) // Number.parseInt() converte o valor recebido pelo prompt, de string para inteiro.
+        var num2 = Number.parseInt(window.prompt('Digite outro número: ')) // também funciona sem escrever o Number, utilizando só o parseInt()
+        // var num1 = window.prompt('Digite um número: ') // se não usar o Number.parseInt(), o valor será recebido como string.
+        // também funciona sem escrever o Number, o programa identifica o tipo de dado sozinho e ajusta.
+        var soma = Number( num1 + num2 ) // Number() converte o resultado da soma para um número, caso contrário, a soma seria feita como string.
+        window.alert(`A soma de ${num1} e ${num2} é: ${soma}`) // utilizando template string, placeholder para a concatenação. ${}
 
     </script>
 </body>
