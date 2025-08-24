@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            font: normal 18pt arial;
+        }
+
+        #div1 {
+            background: #333;
+            padding: 10px;
+            margin: 0px 200px;
+            text-align: center;
+        }
+
+        #seloco {
+            background: #333;
+            padding: 10px;
+            margin: 0px 200px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando em estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="div1">Clique em mim</div>
+    <div id="seloco">Seloco, num compensa</div>
+
+    <script>
+        window.document.write('<br>Adicionando conteúdo ao DOM com JavaScript<br><br>')
+        window.document.write('<br>' + window.navigator.appName + '<br>')
+        window.document.write('<br>' + window.navigator.language + '<br>')
+        window.document.write('<br>' + window.document.URL + '<br>')
+        window.document.write('<br>' + window.document.title + '<br>')
+
+        var corpo = window.document.body
+
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write('<br>Está escrito assim: ' + p1.innerText + '<br>' )
+        p1.style.color = '#f00'
+        corpo.style.background = 'black'
+
+
+        var d = window.document.getElementById('seloco')
+        d.style.background = '#00f'
+        d.innerText = 'Sei lá...'
+
+
+        document.querySelector('div').onclick = function() {
+            this.style.background = '#f00';
+            this.innerHTML = 'Enviando';
+            if (this.innerHTML == 'Enviando') {
+                setTimeout(() => {
+                    this.style.background = '#0f0';
+                    this.innerHTML = 'Arquivo enviado';
+                }, 2000);
+            }
+        }
+
+    </script>
+</body>
+</html>
