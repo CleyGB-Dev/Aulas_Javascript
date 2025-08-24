@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background: rgb(32, 31, 31);
+            color: white;
+            align-items: center;
+            text-align: center;
+        }
+
+        #res {
+            background: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin: 20px;
+            height: 50px;
+            width: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel" placeholder="Velocidade do Carro"> km/h
+
+    <input type="button" value="verificar" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <script>
+
+        function calcular() {
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+
+            if (vel > 60) {
+                res.innerHTML = `Você ultrapassou a velocidade permitida. MULTADO! Sua velocidade foi de ${vel} km/h`
+            }
+            else {
+                res.innerHTML = 'Velocidade segura!'
+            }
+            res.innerHTML += '<br> Dirija sempre usando cinto de segurança!'
+
+        }
+    </script>
+</body>
+</html>

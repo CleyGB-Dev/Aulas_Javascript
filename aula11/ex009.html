@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Nacionalidade</title>
+    <style>
+        body {
+            background: rgb(32, 31, 31);
+            color: white;
+            align-items: center;
+            text-align: center;
+            font: normal 15pt arial;
+        }
+
+        #res {
+            background: black;
+            color: greenyellow;
+            margin-top: 20px;
+            font-size: 20pt;
+            padding: 10px;
+            border-radius: 15px;
+            height: 40px;
+            width: auto;
+            margin: 40px;
+        }
+
+        input[type="text"],
+        input[type="button"] {
+            font: normal 15pt arial;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Verificador de Nacionalidade</h1>
+    <p>Você é Brasileiro ou Estrangeiro?</p>
+    <p>Vamos verificar isto agora!</p>
+    <p>Qual o seu país?</p>
+    <input type="text" id="pais" placeholder="Digite o nome do país">
+    <input type="button" value="Verificar" onclick="verificarNacionalidade()">
+    <div id="res"></div>
+
+
+    <script>
+        function verificarNacionalidade() {
+            var resposta = window.document.getElementById('pais').value
+            var res = window.document.getElementById('res')
+            
+            if (resposta.toLowerCase() == 'brasil') {
+                res.innerHTML = 'Você é Brasileiro!'
+            } else {
+                res.innerHTML = 'Você é Estrangeiro!'
+
+            }
+        }
+    </script>
+</body>
+</html>
