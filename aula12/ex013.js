@@ -22,7 +22,6 @@ switch (true) {
     case idade > 100:
         console.log('Você é um Centenário')
         break
-
     default:
         console.log('Idade inválida')
         break
