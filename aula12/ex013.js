@@ -25,4 +25,5 @@ switch (true) {
 
     default:
         console.log('Idade inválida')
+        break
 }
